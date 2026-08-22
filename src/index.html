@@ -1,191 +1,307 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real Estate</title>
+    <title>QuickCity - Exclusive Real Estate Leads | Pay at Closing</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./output.css" />
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <header class="w-full h-28 bg-white border-b border-gray-200 py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
-        <div class="flex">
+  <body class="bg-white text-gray-800 antialiased selection:bg-[#C77A63] selection:text-white">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs transition-all">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
           <img
             src="https://www.quickcity.com/assets/images/logo-only.webp"
-            alt="logo"
-            class="w-16 h-16"
+            alt="QuickCity Logo"
+            class="w-10 h-10 sm:w-12 sm:h-12 object-contain group-hover:scale-105 transition-transform"
           />
-          <a href="#" class="text-5xl font-black pt-2 font-medium text-[#C77A63]">uick City</a>
-        </div>
+          <span class="text-2xl sm:text-3xl font-black text-[#C77A63] tracking-tight">QuickCity</span>
+        </a>
 
-        <nav class="hidden md:flex items-center space-x-6">
-          <a href="#" class="text-gray-600 hover:text-orange-500 font-medium"
-            >Home</a
-          >
-          <a href="#" class="text-gray-600 hover:text-orange-500 font-medium"
-            >Pricing</a
-          >
-          <a href="#" class="text-gray-600 hover:text-orange-500 font-medium"
-            >About Us</a
-          >
-
-          <a href="#" class="text-gray-600 hover:text-orange-500 font-medium"
-            >Contact</a
-          >
-          <a href="#" class="text-gray-600 hover:text-orange-500 font-medium"
-            >FAQ</a
-          >
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm lg:text-base">
+          <a href="#" class="hover:text-[#C77A63] transition-colors">Home</a>
+          <a href="#why-us" class="hover:text-[#C77A63] transition-colors">Why Us</a>
+          <a href="#pricing" class="hover:text-[#C77A63] transition-colors">Pricing</a>
+          <a href="#about" class="hover:text-[#C77A63] transition-colors">About Us</a>
+          <a href="#contact" class="hover:text-[#C77A63] transition-colors">Contact</a>
+          <a href="#faq" class="hover:text-[#C77A63] transition-colors">FAQ</a>
         </nav>
-        <a
-          href="#"
-          class="pl-3.5 pr-3.5 py-3.5 bg-[#C77A63] rounded-xl w-28 h-14 text-white hover:bg-orange-500"
-          >Get Started</a
-        >
+
+        <!-- Right Side Header Action & Hamburger Toggle -->
+        <div class="flex items-center gap-4">
+          <a
+            href="#pricing"
+            class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-[#C77A63] hover:bg-orange-600 text-white font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-sm"
+          >
+            Get Started
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="md:hidden p-2.5 rounded-xl text-gray-700 hover:text-[#C77A63] hover:bg-gray-50 focus:outline-none transition-colors"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Drawer -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+        <a href="#" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">Home</a>
+        <a href="#why-us" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">Why Us</a>
+        <a href="#pricing" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">Pricing</a>
+        <a href="#about" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">About Us</a>
+        <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">Contact</a>
+        <a href="#faq" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:text-[#C77A63] hover:bg-orange-50 transition-colors">FAQ</a>
+        <div class="pt-2">
+          <a
+            href="#pricing"
+            class="w-full inline-flex items-center justify-center px-6 py-3 bg-[#C77A63] hover:bg-orange-600 text-white font-bold rounded-xl shadow-md transition-all text-center"
+          >
+            Get Started
+          </a>
+        </div>
       </div>
     </header>
-    <!----------------------------------------------------------->
-    <section class="about">
-      <div class="flex mx-28 py-5">
-        <div
-          class="flex flex-col w-full h-120 justify-center align-center gap-5"
-        >
-          <h4 class="text-2xl text-[#2B2D42]">Pay at Closing Leads</h4>
-          <h2 class="text-5xl text-[#2B2D42]">
-            Exclusive buyer and seller leads. Pay at closing.
+
+    <!-- Hero / About Section -->
+    <section id="about" class="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <!-- Content Side -->
+        <div class="flex flex-col justify-center space-y-5 text-left">
+          <div class="inline-flex items-center gap-2 bg-[#C77A63]/10 text-[#C77A63] px-3.5 py-1.5 rounded-full w-fit font-bold text-xs sm:text-sm tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-[#C77A63] animate-pulse"></span>
+            Pay at Closing Leads
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#2B2D42] leading-[1.15] tracking-tight">
+            Exclusive buyer and seller leads. <span class="text-[#C77A63]">Pay at closing.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+            No monthly subscription. QuickCity delivers qualified buyers and sellers in your target zip codes, and you only pay after a successful closing.
+          </p>
+          <div class="pt-3">
+            <a
+              href="#pricing"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#C77A63] hover:bg-orange-600 text-white font-bold tracking-wide uppercase rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center text-sm sm:text-base"
+            >
+              CHECK AVAILABILITY
+            </a>
+          </div>
+        </div>
+
+        <!-- Illustration Image Side -->
+        <div class="flex justify-center lg:justify-end items-center">
+          <div class="relative w-full max-w-md lg:max-w-lg">
+            <div class="absolute -inset-4 bg-gradient-to-r from-orange-100 to-amber-100 rounded-3xl blur-xl opacity-70 transform -rotate-1"></div>
+            <img
+              src="https://www.quickcity.com/assets/images/questions.webp"
+              alt="Real Estate Questions and Leads"
+              class="relative w-full h-auto object-contain rounded-2xl shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why QuickCity Cards Section -->
+    <section id="why-us" class="bg-[#FAF5F2] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-y border-orange-100/50">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-[#C77A63] font-bold text-xs sm:text-sm tracking-widest uppercase bg-white px-4 py-1.5 rounded-full border border-orange-200 shadow-xs inline-block">
+            WHY QUICKCITY
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2B2D42] leading-tight tracking-tight">
+            Lead generation that gets paid when you do.
           </h2>
-          <h5 class="text-2xl text-[#2B2D42]">
-            No monthly subscription. QuickCity delivers qualified buyers and
-            sellers in your target zip codes, and you only pay after a
-            successful closing.
-          </h5>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            QuickCity gives agents exclusive local opportunities without the usual subscription risk. Claim the zip codes you want, work qualified buyer and seller leads, and pay only at closing.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-[#FAF5F2] rounded-2xl flex items-center justify-center p-4 mb-6 group-hover:bg-orange-100/50 transition-colors">
+              <img src="./account-balance-svgrepo-com.svg" alt="Pay at Closing" class="w-12 h-12 object-contain" />
+            </div>
+            <h3 class="text-xl font-bold text-[#2B2D42] mb-3">Zero Monthly Subscriptions</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Never pay upfront monthly retainers or risky subscription fees. You only pay a referral fee upon successful closing.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-[#FAF5F2] rounded-2xl flex items-center justify-center p-4 mb-6 group-hover:bg-orange-100/50 transition-colors">
+              <img src="./credit-card-bank-svgrepo-com.svg" alt="Exclusive Territory" class="w-12 h-12 object-contain" />
+            </div>
+            <h3 class="text-xl font-bold text-[#2B2D42] mb-3">Exclusive Leads</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Every lead is exclusively delivered to you. No competing with 5 other agents in your local area for the same homebuyer.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-[#FAF5F2] rounded-2xl flex items-center justify-center p-4 mb-6 group-hover:bg-orange-100/50 transition-colors">
+              <img src="./diary-svgrepo-com.svg" alt="Target Zip Codes" class="w-12 h-12 object-contain" />
+            </div>
+            <h3 class="text-xl font-bold text-[#2B2D42] mb-3">Claim Your Zip Code</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Lock in your preferred zip codes and build a predictable pipeline of ready-to-act buyers and motivated sellers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Claim Zip Code CTA Section -->
+    <section id="pricing" class="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cover bg-center text-white overflow-hidden" style="background-image: linear-gradient(to bottom, rgba(37,38,56,0.92), rgba(37,38,56,0.88)), url('https://i.pinimg.com/736x/ec/56/24/ec5624898720efdf35bd5fc8ed687e0c.jpg');">
+      <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+        <span class="text-[#C77A63] font-bold text-xs sm:text-sm tracking-widest uppercase bg-white/10 px-4 py-1.5 rounded-full inline-block backdrop-blur-xs">
+          CLAIM YOUR ZIP CODE
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+          Start receiving exclusive leads on a <br class="hidden sm:inline" />
+          <span class="text-[#C77A63]">pay-at-closing</span> model.
+        </h2>
+        <div class="pt-4 flex justify-center">
           <button
-            class="flex items-center justify-center text-white capitalize rounded-none bg-[#C77A63] w-2/5 h-16 font-bold hover:bg-orange-500"
+            type="button"
+            class="w-full sm:w-auto px-10 py-4 bg-[#C77A63] hover:bg-orange-600 text-white font-bold tracking-wider uppercase rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 text-sm sm:text-base cursor-pointer"
           >
             CHECK AVAILABILITY
           </button>
         </div>
-        <div class="flex w-full h-120 justify-end items-center">
-          <img
-            src="https://www.quickcity.com/assets/images/questions.webp"
-            alt="hero"
-            class="max-h-full object-contain"
-          />
-        </div>
       </div>
     </section>
-    <!------------------------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------->
-    <section class="bg-[#FAF5F2] mt-30 max-h-290 p-40">
-      <div class="flex flex-col justify-center items-center gap-20">
-        <span class="text-[#C77A63] font-semibold text-3xl uppercase"
-          >WHY QUICKCITY</span
-        >
-        <h1
-          class="text-6xl md:text-5xl font-semibold text-[#2B2D42] mx-auto text-center"
-        >
-          Lead generation that gets paid when you do.
-        </h1>
-        <p class="text-lg text-[#2B2D42] text-center mx-auto">
-          QuickCity gives agents exclusive local opportunities without the usual
-          subscription risk. Claim the zip codes you want, work qualified buyer
-          and seller leads, and pay only at closing.
-        </p>
-      </div>
-      <section class="w-full bg-[#FAF5F2] py-12 px-6 mt-27 h-auto">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-6">
-          <div
-            class="flex-1 bg-[#FAF5F2] rounded-2xl border bg-[#FAF5F2] shadow-sm p-6 min-h-62.5 flex flex-col justify-center items-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-          >
-            <img src="./account-balance-svgrepo-com.svg" alt="" />
-          </div>
 
-          <div
-            class="flex-1 bg-[#FAF5F2] rounded-2xl border bg-[#FAF5F2] shadow-sm p-6 min-h-62.5 flex flex-col justify-center items-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-          >
-            <img src="./credit-card-bank-svgrepo-com.svg" alt="" />
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#252638] text-gray-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-b border-gray-800">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <!-- Column 1: Contact -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://www.quickcity.com/assets/images/logo-only.webp" alt="QuickCity Logo" class="w-8 h-8 object-contain" />
+            <span class="text-2xl font-black text-white">QuickCity</span>
           </div>
-
-          <div
-            class="flex-1 bg-[#FAF5F2] rounded-2xl border bg-[#FAF5F2] shadow-sm p-6 min-h-62.5 flex flex-col justify-center items-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-          >
-            <img src="./diary-svgrepo-com.svg" alt="" />
+          <h4 class="text-white font-bold text-lg pt-2">Contact Us</h4>
+          <div class="space-y-1 text-sm">
+            <span class="block text-gray-400 font-medium">Email</span>
+            <a
+              href="mailto:muhammadaliraza1742@gmail.com"
+              class="text-white hover:text-[#C77A63] transition-colors break-all"
+            >
+              muhammadaliraza1742@gmail.com
+            </a>
           </div>
         </div>
-      </section>
-    </section>
-    <!------------------------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------->
-    <section
-      class="flex flex-col w-full pb-40 pt-40 justify-center items-center gap-7 capitalize bg-[linear-gradient(to_bottom,rgba(0,0,0,0.95),rgba(0,0,0,0.85)),url('https://i.pinimg.com/736x/ec/56/24/ec5624898720efdf35bd5fc8ed687e0c.jpg')] bg-cover bg-center"
-    >
-      >
-      <div class="text-center flex flex-col gap-16">
-        <h4 class="text-white text-3xl">CLAIM YOUR ZIP CODE</h4>
-        <h2 class="text-5xl text-center text-white">
-          Start receiving exclusive leads on a<br />pay-at-closing model.
-        </h2>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#" class="hover:text-[#C77A63] transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-[#C77A63] transition-colors">About Us</a></li>
+            <li><a href="#pricing" class="hover:text-[#C77A63] transition-colors">Pricing</a></li>
+            <li><a href="#contact" class="hover:text-[#C77A63] transition-colors">Contact Us</a></li>
+            <li><a href="#faq" class="hover:text-[#C77A63] transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Policies -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-lg mb-4">Policies</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#" class="hover:text-[#C77A63] transition-colors">Terms and Conditions</a></li>
+            <li><a href="#" class="hover:text-[#C77A63] transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-[#C77A63] transition-colors">Billing Terms</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="space-y-4">
+          <h4 class="text-white font-bold text-lg">Newsletter</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Subscribe to stay updated with real estate market insights and zip code availability.
+          </p>
+          <form onsubmit="event.preventDefault();" class="flex flex-col sm:flex-row gap-2 sm:gap-0">
+            <input
+              type="email"
+              placeholder="EMAIL ADDRESS"
+              required
+              class="w-full border border-gray-700 px-3.5 py-3 text-xs rounded-lg sm:rounded-r-none focus:outline-none focus:border-[#C77A63] bg-white/10 text-white placeholder-gray-400"
+            />
+            <button
+              type="submit"
+              class="bg-[#C77A63] hover:bg-orange-600 text-white font-bold text-xs uppercase px-5 py-3 rounded-lg sm:rounded-l-none transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
       </div>
-      <button
-        class="flex items-center justify-center text-white capitalize rounded-none bg-[#C77A63] w-3xs h-16 font-bold hover:bg-orange-500"
-      >
-        CHECK AVAILABILITY
-      </button>
-    </section>
+    </footer>
+
+    <!-- Copyright Footer Strip -->
+    <div class="bg-[#1e1f2e] text-center text-gray-400 py-6 px-4 text-xs sm:text-sm font-medium">
+      <div class="max-w-7xl mx-auto">
+        Copyright &copy; 2026 Ali Raza. All Rights Reserved.
+      </div>
+    </div>
+
+    <!-- Interactive Mobile Menu Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+          });
+
+          // Close menu when clicking on any link inside mobile menu
+          mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              menuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
   </body>
-  <!----------------------------->
-  <!----------------------------->
-  <!----------------------------->
-  <footer
-    class="bg-[#252638] min-h-[400px] w-full pt-[120px] pb-[60px] px-8 flex justify-between items-start text-start gap-8"
-  >
-    <div class="flex flex-col gap-4">
-      <h4 class="text-white font-bold text-3xl">Contact Us</h4>
-      <div class="flex flex-col gap-1 text-sm">
-        <span class="text-white font-medium **:">Email</span>
-        <a
-          href="mailto:muhammadaliraza1742@gmail.com"
-          class="hover:underline text-white"
-          >muhammadaliraza1742@gmail.com</a
-        >
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-3">
-      <h4 class="text-white font-bold text-3xl">Links</h4>
-      <a href="#" class="hover:underline text-sm text-white">About Us</a>
-      <a href="#" class="hover:underline text-sm text-white">Pricing</a>
-      <a href="#" class="hover:underline text-sm text-white">Contact Us</a>
-    </div>
-
-    <div class="flex flex-col gap-3">
-      <h4 class="text-white font-bold text-3xl">Policies</h4>
-      <a href="#" class="hover:underline text-sm text-white"
-        >Terms and Conditions</a
-      >
-      <a href="#" class="hover:underline text-sm text-white">Privacy Policy</a>
-      <a href="#" class="hover:underline text-sm text-white">Billing Terms</a>
-    </div>
-
-    <div class="flex flex-col gap-4">
-      <h4 class="text-white font-bold text-3xl">Newsletter</h4>
-      <div class="flex items-center">
-        <input
-          type="email"
-          placeholder="EMAIL ADDRESS"
-          class="border px-3 h-12 text-sm rounded-l focus:outline-none bg-white"
-        />
-        <button
-          class="text-white capitalize bg-[#C77A63] px-4 h-12 font-bold text-xs rounded-r hover:bg-orange-500 transition-colors"
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </footer>
-  <hr />
-  <div class="min-h-25 bg-[#252638] text-center text-white">
-    <h2>Copyright 2026 by Ali Raza. All Rights Reserved.</h2>
-  </div>
 </html>
+
